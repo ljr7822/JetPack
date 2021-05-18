@@ -12,6 +12,8 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 
 /**
+ * 自定义一个观察者类
+ *
  * @author iwen大大怪
  * @Create 2021/05/18 15:50
  */
@@ -20,9 +22,10 @@ class MyLocationObserver(private val context: Context) : LifecycleObserver {
     private lateinit var locationManager: LocationManager
     private lateinit var locationListener: LocationListener
 
+    // 监听onCreate生命周期
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun startGetLocation() {
-        Log.d("ljr","startGetLocation")
+        Log.d("ljr", "startGetLocation")
         locationManager = context.getSystemService(Context.LOCATION_SERVICE) as LocationManager
         locationListener = MyLocationListener()
         if (ActivityCompat.checkSelfPermission(
@@ -45,9 +48,10 @@ class MyLocationObserver(private val context: Context) : LifecycleObserver {
         )
     }
 
+    // 监听onDestroy生命周期
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     fun stopGetLocation() {
-        Log.d("ljr","stopGetLocation")
+        Log.d("ljr", "stopGetLocation")
         locationManager.removeUpdates(locationListener)
     }
 

@@ -13,6 +13,8 @@ class MyLocationService() : LifecycleService() {
 
     init {
         Log.d("ljr","MyLocationService")
+        // 将自定义的观察者对象添加到观察者集合中
+        // 通过lifecycle将观察者和被观察者关联起来
         val observer = MyLocationObserver(this)
         lifecycle.addObserver(observer)
     }
