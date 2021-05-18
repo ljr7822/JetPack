@@ -1,3 +1,4 @@
 rootProject.name = "JetPack"
 include ':app'
 include ':lifecycle'
+include ':viewmodel'
