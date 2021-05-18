@@ -3,6 +3,7 @@ package cn.iwenddg.lifecycle
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
+import android.view.View
 import android.widget.Chronometer
 import cn.iwenddg.lifecycle.databinding.ActivityMainBinding
 
